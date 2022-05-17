@@ -39,10 +39,15 @@ class ViewController: UIViewController {
         }else{
             print("Wrong!")
         }
-        questionNumber += 1
+    
+        if questionNumber + 1 < quiz.count {
+            questionNumber += 1
+            
+        }else {
+            questionNumber = 0
+        }
         updateUI()
     }
-    
     func updateUI() {
         questionLabel.text = quiz[questionNumber][0]
     }
