@@ -13,9 +13,9 @@ struct Question{
     var answer : [String]
     var correctAnswer: String
     
-    init(q: String , a : [String] , c: String) {
+    init(q: String , a : [String] , correctAnswer: String) {
         text = q
         answer = a
-        correctAnswer = c
+        self.correctAnswer = correctAnswer
     }
 }
