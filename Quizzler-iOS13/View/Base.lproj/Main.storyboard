@@ -105,12 +105,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="falseButton" destination="tbn-vQ-GyC" id="3ot-wY-IzM"/>
                         <outlet property="firstButton" destination="oY0-JJ-kI4" id="sPx-vZ-gTD"/>
                         <outlet property="progressBar" destination="TXm-qh-7Xg" id="X07-Hg-Vxf"/>
                         <outlet property="questionLabel" destination="rSI-li-mhO" id="eCv-0u-ZHV"/>
                         <outlet property="scoreLabel" destination="wRg-dK-rKg" id="YHQ-fz-di2"/>
-                        <outlet property="trueButton" destination="oVw-Hl-IRe" id="DbH-88-BUD"/>
+                        <outlet property="secondButton" destination="oVw-Hl-IRe" id="jns-x1-l4z"/>
+                        <outlet property="thirdButton" destination="tbn-vQ-GyC" id="LHN-7o-5oR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
