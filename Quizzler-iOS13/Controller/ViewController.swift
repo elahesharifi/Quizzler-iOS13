@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class ViewController: UIViewController {
     
     @IBOutlet weak var questionLabel: UILabel!
@@ -27,36 +26,37 @@ class ViewController: UIViewController {
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         
-        let userAnswer = sender.currentTitle! //True, False
+        let userAnswer = sender.currentTitle! //question answer = [,,]
         let userGotItRight = quizBrain.checkAnswer(userAnswer)
         
         if userGotItRight {
             sender.backgroundColor = UIColor.green
         }else{
             sender.backgroundColor = UIColor.red
-           
+            
         }
         
         quizBrain.nextQuestion()
         
-        Timer.scheduledTimer(timeInterval: 0.5, target:self, selector: #selector(updateUI), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 0.4, target:self, selector: #selector(updateUI), userInfo: nil, repeats: true)
         
     }
+    
     @objc func updateUI() {
         questionLabel.text = quizBrain.getQuestionText()
         progressBar.progress = quizBrain.getProgress()
         scoreLabel.text = "Score: \(quizBrain.getScored())"
-       
+        
         firstButton.setTitle(quizBrain.returnAnswers(), for:.normal)
         secondButton.setTitle(quizBrain.returnAnswers(), for:.normal)
         thirdButton.setTitle(quizBrain.returnAnswers(), for:.normal)
-
+        
+        firstButton.backgroundColor = UIColor.clear
         secondButton.backgroundColor = UIColor.clear
         thirdButton.backgroundColor = UIColor.clear
         
-        
     }
-   
+    
     
 }
 

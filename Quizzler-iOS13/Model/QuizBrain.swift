@@ -44,11 +44,14 @@ struct QuizBrain {
     }
     mutating func nextQuestion() {
         if questionNumber + 1 < quiz.count {
+            optionAnswer = 0
             questionNumber += 1
             
         }else {
             questionNumber = 0
             scoreNumber = 0
+            optionAnswer = 0
+            
         }
     }
     func getScored() -> Int {
@@ -57,11 +60,17 @@ struct QuizBrain {
     mutating func returnAnswers() -> String {
         
         var options = quiz[questionNumber].answer
+        print(optionAnswer)
         var directOptions = options[optionAnswer]
         print(options[optionAnswer])
-        print(optionAnswer)
-        
+        if optionAnswer < 2  {
+            optionAnswer += 1
+        }else {
+            optionAnswer = 0
+            print("test")
+        }
         return directOptions
        
     }
+
 }
