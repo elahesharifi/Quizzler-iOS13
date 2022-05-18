@@ -11,9 +11,11 @@ import Foundation
 struct Question{
     var text: String
     var answer : String
+    var correctAnswer: String
     
-    init(q: String , a: String) {
+    init(q: String , a: String , c: String) {
         text = q
         answer = a
+        correctAnswer = c
     }
 }
