@@ -51,7 +51,6 @@ struct QuizBrain {
         }
     }
     func getScored() -> Int {
-        
         return scoreNumber
     }
 }
