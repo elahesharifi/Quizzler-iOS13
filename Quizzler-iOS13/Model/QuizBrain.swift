@@ -25,7 +25,7 @@ struct QuizBrain {
     ]
     var questionNumber = 0
     var scoreNumber = 0
-    var optionAnswer = 0
+    //var optionAnswer = 0
     
     mutating func checkAnswer(_ userAnswer:String) -> Bool {
         if userAnswer == quiz[questionNumber].correctAnswer {
@@ -45,33 +45,20 @@ struct QuizBrain {
     }
     mutating func nextQuestion() {
         if questionNumber + 1 < quiz.count {
-            optionAnswer = 0
+            //optionAnswer = 0
             questionNumber += 1
             
         }else {
             questionNumber = 0
             scoreNumber = 0
-            optionAnswer = 0
             
         }
     }
     func getScored() -> Int {
         return scoreNumber
     }
-    mutating func returnAnswers() -> String {
-        
-        var options = quiz[questionNumber].answer
-        print(optionAnswer)
-        var directOptions = options[optionAnswer]
-        print(options[optionAnswer])
-        if optionAnswer < 2  {
-            optionAnswer += 1
-        }else {
-            optionAnswer = 0
-            print("test")
-        }
-        return directOptions
-       
-    }
 
+    func getAnswers() -> [String] {
+        return quiz[questionNumber].answer
+    }
 }
